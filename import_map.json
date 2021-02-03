@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "src/": "./src/",
+    "test/": "./test/",
+    "expect": "https://deno.land/x/expect/mod.ts"
+  }
+}
