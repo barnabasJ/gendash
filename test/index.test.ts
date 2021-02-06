@@ -4,9 +4,12 @@ import {
   takeOne,
   take,
   range,
+  reduce,
   filter,
   takeAll,
   toList,
+  sort,
+  uniq,
 } from "src/index.ts";
 
 Deno.test("something", () => {
@@ -52,11 +55,38 @@ Deno.test("something", () => {
   expect(takeAll(new Set())).toEqual([]);
   expect(takeAll(new Set())).toEqual([]);
   expect(takeAll(new Set([0, 1, 1]))).toEqual([0, 1]);
-  // expect(takeAll(toList(new Set([0, 1, 1])))).toEqual([0, 1]);
-  expect(takeAll(toList({ a: 1 }))).toEqual([["a", 1]]);
-  expect(takeAll(toList(new Map()))).toEqual([]);
+  expect(takeAll(toList({ a: 1, b: 2 }))).toEqual([
+    ["a", 1],
+    ["b", 2],
+  ]);
   const m = new Map();
   m.set("hello", "world");
   expect(takeAll(m)).toEqual([["hello", "world"]]);
-  // expect(takeAll(toList(m))).toEqual([["hello", "world"]]);
+  expect(reduce(range(1, 10), (acc, v) => acc + v, 0));
+  expect(sort([9, 8, 7, 6, 5, 4, 3, 2, 1])).toEqual([
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+  ]);
+  expect(sort(range(1, 10), (a, b) => b - a)).toEqual([
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1,
+  ]);
+
+  expect(takeAll(uniq([1, 1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 9]))).toEqual(
+    takeAll(range(1, 10))
+  );
 });
