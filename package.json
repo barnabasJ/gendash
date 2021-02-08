@@ -1,0 +1,13 @@
+{
+  "name": "gendash",
+  "version": "0.1.0",
+  "description": "lodash inspired library built on top of generators",
+  "main": "dist/index.js",
+  "repository": "git@github.com:barnabasJ/gendash.git",
+  "author": "Barnabas Jovanovics <barnabas.jovanovics@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "deno test --import-map=import_map.json --unstable ./test",
+    "bundle": "deno bundle --import-map=import_map.json --unstable ./src/index.ts > ./dist/index.js"
+  }
+}
