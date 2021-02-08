@@ -1,4 +1,4 @@
 {
-    "src/*.ts": { "alternate": "test/{}.ts" },
-    "test/*.ts": { "alternate": "src/{}.ts"}
+  "src/*.ts": { "alternate": "test/{}.test.ts" },
+  "test/*.test.ts": { "alternate": "src/{}.ts" }
 }
