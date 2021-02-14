@@ -1,0 +1,1 @@
+![Lint](https://github.com/barnabasJ/gendash/workflows/Lint/badge.svg)
