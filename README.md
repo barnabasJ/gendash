@@ -1,1 +1,1 @@
-![Lint](https://github.com/barnabasJ/gendash/workflows/Lint/badge.svg)
+![CI](https://github.com/barnabasJ/gendash/workflows/CI/badge.svg)
