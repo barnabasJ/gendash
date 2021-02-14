@@ -1,0 +1,1 @@
+![CI](https://github.com/barnabasJ/gendash/workflows/CI/badge.svg)
