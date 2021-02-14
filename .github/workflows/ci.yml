@@ -1,0 +1,15 @@
+name: Lint
+on: push
+jobs:
+  lint:
+    name: Lint the code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Deno
+        uses: denolib/setup-deno@v2
+        with:
+          deno-version: "v1.x"
+      - run: |
+          deno lint --import-map=import_map.json --unstable ./test
+          deno test --import-map=import_map.json --unstable ./test
