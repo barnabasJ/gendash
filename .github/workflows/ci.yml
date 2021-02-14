@@ -2,7 +2,7 @@ name: Lint
 on: push
 jobs:
   lint:
-    name: Lint the code
+    name: Lint and test the code
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -11,5 +11,5 @@ jobs:
         with:
           deno-version: "v1.x"
       - run: |
-          deno lint --import-map=import_map.json --unstable ./test
+          deno lint --unstable ./test ./src
           deno test --import-map=import_map.json --unstable ./test

@@ -1,4 +1,4 @@
-export function* map<I extends any, O extends any>(
+export function* map<I extends unknown, O extends unknown>(
   collection: Iterable<I>,
   fn: (n: I) => O
 ) {
