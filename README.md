@@ -7,10 +7,11 @@ top of Javascript Iterators/Generators in order to have a lazy execution model w
 
 Because the single functions return generators nothing happens until the results are collected
 
-```
+```typescript
 const generator = map([1, 2, 3, 4, 5], n => n * n)
 console.log(generator)
 # Generator {}
+
 const squares = take(generator, 2)
 console.log(squares)
 # [1, 4]
@@ -21,7 +22,7 @@ As we can see the numbers are only generated if we use a eager function to get t
 Aside from computing the changes only when they are really needed, only the amount of needed
 values is calculated. This means we can have generators that would yield infinte values.
 
-```
+```typescript
 let values = range(Infinity)
 console.log(values)
 # Generator {}
