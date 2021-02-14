@@ -48,5 +48,5 @@ console.log(values)
 
 All functions inside the lazy folder return generators, functions in the eager folder compute and return values.
 
-If possible the functions are lazy, but not all function can be lazy make sense to be lazy.
+If possible the functions are lazy, but not all function can be lazy or make sense to be lazy.
 E.g. sort only makes sense if it can look at all the values.
